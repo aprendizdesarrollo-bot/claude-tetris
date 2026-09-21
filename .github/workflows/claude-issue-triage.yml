@@ -94,9 +94,15 @@ jobs:
                `--add-label`. No dupliques labels ni dejes clasificaciones contradictorias
                (p. ej. dos labels de severidad a la vez).
 
-            4. Redacta el diagnóstico como un comentario Markdown, EMPEZANDO la primera
-               línea exactamente con el marcador `<!-- claude-triage -->` (para poder
-               encontrarlo luego), con esta estructura:
+            4. Redacta el diagnóstico como un comentario en formato Markdown válido para
+               GitHub (GitHub Flavored Markdown), EMPEZANDO la primera línea exactamente
+               con el marcador `<!-- claude-triage -->` (para poder encontrarlo luego).
+               Usa sintaxis que GitHub renderice correctamente: encabezados con `##`,
+               listas con `-`, checklists con `- [ ]`, bloques de código con triple
+               backtick y el lenguaje indicado (` ```js `), y `` `código en línea` `` para
+               nombres de funciones/archivos. No envuelvas el comentario completo en un
+               único bloque de código: solo el fragmento de comentario en sí debe llevar
+               triple backtick. Estructura:
 
                ## 🔍 Diagnóstico automático
 
