@@ -1,0 +1,38 @@
+# Catálogo de labels del proyecto.
+#
+# Fuente de verdad para .github/workflows/claude-issue-triage.yml, que lee
+# este archivo y crea/actualiza los labels en el repo con `gh label create --force`.
+# Para añadir, quitar o cambiar un label, edita este archivo — el workflow
+# se encarga de sincronizarlo en la siguiente ejecución.
+#
+# Formato por línea: name | color (hex sin #) | description
+
+# --- Tipo (exactamente 1 por issue) ---
+bug | d73a4a | Algo no funciona como se espera
+feature | a2eeef | Nueva funcionalidad que no existe hoy
+enhancement | 84b6eb | Mejora de algo que ya existe
+docs | 0075ca | Cambios en documentación (README, CLAUDE.md, etc.)
+question | d876e3 | Pregunta o duda que no implica un cambio directo de código
+chore | c5def5 | Tareas de mantenimiento sin impacto en el juego (deps, config, limpieza)
+
+# --- Área (1 o más por issue) ---
+area:gameplay | fbca04 | Lógica del juego: colisión, rotación, locking, loop, niveles
+area:rendering | fbca04 | Dibujo en canvas: draw, drawNext, drawBlock, drawGrid, ghost piece
+area:controls | fbca04 | Entrada de teclado y controles del jugador
+area:scoring | fbca04 | Puntaje, líneas y progresión de nivel
+area:ui | fbca04 | HTML/CSS: layout, estilos, elementos de interfaz
+area:ci | fbca04 | Workflows de GitHub Actions y configuración de CI
+
+# --- Severidad (exactamente 1, solo aplica a bug) ---
+severity:critical | b60205 | Rompe el juego (crash, no carga, bloqueo total)
+severity:major | e99695 | Afecta significativamente la jugabilidad
+severity:minor | f9d0c4 | Problema menor o cosmético
+
+# --- Complejidad (exactamente 1) ---
+complexity:easy | c2e0c6 | Cambio pequeño y acotado a una función o archivo
+complexity:medium | fef2c0 | Requiere tocar varias funciones o entender el flujo del loop
+complexity:hard | f9c2c2 | Cambio estructural o con muchos casos borde
+
+# --- Estado ---
+needs-info | ededed | Falta información del reportante para poder diagnosticar
+triaged | 0e8a16 | Ya fue analizado y clasificado por el workflow de triage
